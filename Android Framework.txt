@@ -1,0 +1,14 @@
+Android FrameWork
+
+Other approaches of FrameWork
+1. Patterns -- Both address the Same Issue of Reusing. FrameWork Address to the Concrete Design, algorithms. Patterns are restricted to the abstract design 
+				FrameWork is a concrete Unification of the design patterns that are targeted for the particular application-domain.
+2. Class Libraries -- Libraries are typical passive , ie they borrow the thread , and then processing happens.
+					  In case of frameworks, they are Active, they own the even loop, when something is needed then hook methods are called.
+
+					  
+Android Services and IPC
+Services:
+		Have to extend the Service class.
+		It runs in the Same Application thread. But Does'nt block the UI Behaviour.
+		

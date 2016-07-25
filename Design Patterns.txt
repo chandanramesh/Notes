@@ -1,0 +1,24 @@
+Design Patterns
+
+Factory Design Pattern;
+	It's always a best Practice to program to interface, rather then the actual implementation. If later Some things have to be added/remove then it will be 
+	difficult to modify.
+Sub 1 . The Simply Factory
+		Not a actual Design Pattern, its a programming Idiom.
+		Public class SimplePizzaFactory{
+			public pizza CreatePizza(String type){
+				if(type.equals("Cheese")
+				pizza = new CheesePizza();
+				if(type.equals("clam");
+				pizza = new ClamPizza();
+				return pizza;
+			}
+		}
+	
+	
+	
+	
+Command Design Pattern:
+	It decouples the requester of actions from the object that actually performs the actions.
+	This is done by using the Command Object. The remote has the Command Object that knows how to talk to the right Object to get the Work Done.
+	

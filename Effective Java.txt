@@ -1,0 +1,15 @@
+Item 2: Consider a Builder when faced with many parameters with constructors.
+		Adv:1. The Builder Can take many Varrargs , since each method will set the parameter in different methods.
+		Builder Pattern is a good choice when the no of variables are more.
+Item 3: Singelton Class
+		Use readResolve method to resolve the singelton class. This method will replace the object returned bby the deserializing , with it's own object.
+		Enum Singelton: This is the best preffered approach for implementing the Singelton Class.
+Item 4: Enforce Non instatntiability with the private Constructor.
+Item 5: Avoid Creating Un necessary Objects.
+		Prefer primitives over Boxed primitives , and watch out for unintentional autoboxing.
+		Maintaing the Object Pool is much better choice, but in case of heavy weight Objects, it's better to maintain the Object pool instead.
+Item 6: Eliminate Obsolete object references.
+		Null the Obsolete references.
+		Another example of memory leaks is by listeners and other callbacks.
+Item 7: Avoid Finalizers.
+		
