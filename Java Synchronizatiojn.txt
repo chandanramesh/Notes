@@ -1,0 +1,10 @@
+Monitors :A Monitor is an object designed to be accessed from multiple threads
+		They are Kind of Objects.
+		They are higher Levels Compared to Semaphores.
+Semaphores: A Semaphore is a lower-level object. A semaphore essentially is just a counter.
+Java: java.util.concurrent.semaphore 
+		This is a counting Semaphore. This Acts in limiting the no of threads simultaneously accesing block of code.
+		Methods: 1.acquire() - Blocks until a permit is available.
+				 2.release() - Potenially removes the blocking aquired.
+				 
+	

@@ -1,0 +1,39 @@
+Java Key Points:
+
+
+Topic Constructors :
+		If the Constructors is Private, you cant extend the Class.
+		
+		
+Topic Class 
+		Obtaing lock on the Class Object.
+		Class Object are Constructed During the Class Loading Time. It is Stored in the Perm Gen Space in Heap.
+		Class Object Contain Some MetaDate About the Class functions,Packages, Fields , Constructors.
+		Each Object belongs to a Class, and has it's respective Class Object.
+		
+		Class Object can be Obtained by two methods.
+	1. Using Class Literal
+		Class c = MyClass.class;
+	2. Using getClass() Method.
+		Class c = my.getClass();
+		
+	->.getClass() will return the class object at the Runtime. The .Class will return the Refernce type Class Object.
+	->Primitive Type has Also Class Object
+		Eg: int.class , float.class.
+		
+	->Class Objects are Stored in the PermGen Space of the Heap. They are Usually not Garbage Collected. GC happens when the ClassLoader goes out of Scope.
+		
+Topic MemoryManagement
+		The Memory in case of Java is divied into 3 Spaces.
+		1.Heap Memory.
+		2.Method Area.-- It is part of non-heap memory. It Stores RunTime Constants and Static Fields. Code for Methods and Constructors.
+		3.Java Stack.-- They are Private to the thread, in which it was created.
+		
+		Partition of the HeapSpace.
+		1. Youg Generation - a.Eden Space - Intially Objects will be Put into here.
+							 b.Survivor Space - When GC happens in the Eden Space the objects are Pushed into Survivor Space.
+		2.Tenured Generation - Long Term Objects live in this Vicinity.
+		3. PermGen - This is the Space where Class Objects are kept.(Usually Long- Term Objects are Kept here).
+		
+	Link --http://javapapers.com/core-java/java-jvm-memory-types/
+		

@@ -1,3 +1,9 @@
+Item 1. Consider Static Factory methods instead of Constructors.
+	Advantage: a.Static methods can have names , its better to identify.
+			   b. They are not required to create a new Object each time.
+			   c. Unlike Constructors , they can return the SubTypes of the expected type.
+					The Collection FrameWork API is much smaller because it uses this static Factory method.
+			   d. The java.util.EnumSet uses the static factory to return the instance.
 Item 2: Consider a Builder when faced with many parameters with constructors.
 		Adv:1. The Builder Can take many Varrargs , since each method will set the parameter in different methods.
 		Builder Pattern is a good choice when the no of variables are more.

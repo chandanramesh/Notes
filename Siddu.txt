@@ -1,0 +1,27 @@
+Shashi - 100
+Sudhi -200
+Mitesh - 200
+Sharana -200
+Raju -100
+Pramod -100
+Jaga - 100
+Dharshan -200
+Lalith - 100
+Raja -200
+Chirag-100
+
+1600
+
+Mansi
+Rahul
+Praveen
+Srijana
+Abdul
+
+
+Chandan-500
+Abhishek-500
+Sidda-500
+Chethan-500
+
+Total - 3600

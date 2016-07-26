@@ -1,0 +1,7 @@
+Algorithms:
+
+Rabin Karp Algorithm -- Continous Patten Detection in case of string.
+						Uses Hashing first to check whether Hash Value is Same.
+						Later Decides to check index wise.
+http://www.geeksforgeeks.org/searching-for-patterns-set-3-rabin-karp-algorithm/ 
+The average and best case running time of the Rabin-Karp algorithm is O(n+m), but its worst-case time is O(nm). 
