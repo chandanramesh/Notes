@@ -1,5 +1,85 @@
 Design Patterns
 
+Design patterns:
+
+Singelton
+
+	Ensures that the Class has Only one instannce and provide a global point of access to it.
+	
+	public class Singelton{
+		public static Singelton uniqueInstance;
+		private Singelton(){
+		}
+		public static Singelton getInstance(){
+		if(uniqueInstance == null){
+			uniqueInstance = new Singelton();
+			}
+			return uniqueInstance;
+		}
+	
+	}
+	
+	The above Code refers to the Singelton , (Lazy initialization). But this Design has a Huge Impact in the Case of MultiThreading. 
+	The Synchronization is the way out, by making the getInstance() method as Synchronized.
+	public static Synchronized Singelton getInstance(){
+		if(uniqueInstance == null){
+			uniqueInstance = new Singelton();
+			}
+			return uniqueInstance;
+		}
+	
+	This Synchronization has Huge effect in case of Performance, we can follow the below methos to avoid this Performance Hit.
+	
+	1. Double Checked Locking.
+		In this Method we check if the new Instance is being created,then we obtain the lock.(Most of the time it is not)
+		public static Singelton getInstance(){
+			if(uniqueInstance == null){															
+			Synchronized(Singelton.class){											Obtaing lock on the Class Object.
+					if(uniqueInstance ==null){										Class Object are Constructed During the Class Loading Time. It is Stored in the Perm Gen Space in Heap.
+						uniqueInstance = new Singelton();							Class Object Contain Some MetaDate About the Class functions,Packages, Fields , Constructors
+						}															Each Object belongs to a Class, and has it's respective Class Object.					
+				}
+			
+			}
+		}
+	2. Do Early Intialization .
+		public static Singelton uniqueInstance = new Singelton();
+		By this We depend on th JVM to do the instantiation as Early as Possible , During the Class Load Time.
+		
+		
+
+		
+Template Design Pattern
+	The Template Method defines the steps of an algorithm and allows sub classes to provide the implementations for one or more steps.
+Template - It's just a method, that's define algorithm as a set of steps. One Or more Steps are defined as Abstract and implemented by the SubClass
+
+Eg: This Class describes the Beverage Preparation Class.
+	public abstract class CaffeineBeverage{
+		void final prepareReciepe(){
+		boilwater();						prepareReciepe() method is the template method , because of the following 
+		brew();								1. It serves as a template for the algorithm. 
+		pourInCup();						2. Sub Class will handle the Abstract methods Defined here.
+		addCondiments();						The method is Final , Cant be overridden.
+		
+		abstract void brew();
+		abstract void addCondiments();
+		}
+	}
+	
+	
+By this Design Pattern , we can reuse the Code. Make the Similar kinds of algorithm,(Slightly varying algo's ) come under the Single Class.
+
+Hook Methods:
+	These are Empty Methods, defined in the abstract class itself.
+	The Subclass have no restrictions to provide the implementation, but they may choose to provide one.
+
+Use abstract methods, when the implementation is Compulsory. Use the Hook when it is optional.
+
+The Hollywood Principle: It is used to build the Framework or components so that the lower level components can hook into it.
+
+The actual implementation in Java Can be Seen in the Array.Sort() methods , which defines the Sort Topology.
+	The Actual implementation is provided by the SubClass/Class using it.{Arrays.Sort(ducks).The Comparable interface is implemented in the ducks class}
+	
 Factory Design Pattern;
 	It's always a best Practice to program to interface, rather then the actual implementation. If later Some things have to be added/remove then it will be 
 	difficult to modify.

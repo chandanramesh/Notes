@@ -1,0 +1,4 @@
+Collections
+
+Arrays.Sort(java.util.Arrays)
+		The Sort method here uses the Dual Pivot QuickSort.

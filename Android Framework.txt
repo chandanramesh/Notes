@@ -12,3 +12,16 @@ Services:
 		Have to extend the Service class.
 		It runs in the Same Application thread. But Does'nt block the UI Behaviour.
 		
+Android Framework
+		Key Points - 1. Inversion of Control.
+				     2. Extensible Design and Code.
+					 3. Domain Specific Functionality and Structure/
+					 4. ReUsable Semi Complete Application.
+					 5. Implementation Pattern Languages
+					 
+					 
+	Inversion of Control - Hollywood Principle
+						   "Dont call us we will call u".
+						   It is used to build the Framework or components so that the lower level components can hook into it.
+	IC basically advocates programming to interface rather then to implementations.
+		
