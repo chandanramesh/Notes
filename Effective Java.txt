@@ -12,4 +12,49 @@ Item 6: Eliminate Obsolete object references.
 		Null the Obsolete references.
 		Another example of memory leaks is by listeners and other callbacks.
 Item 7: Avoid Finalizers.
-		
+			finalize(GC) blocks are never guaranteed to run, dont depend on them.
+			Exceptions that are thrown in the finalize block are never catched , they wont even show the stack trace. They just currupt the object state.
+			There is a severe performance hit by using the finalizers.
+			
+Item 9: Always Override the hashcode, when u overwrite the equals method.
+
+Item 13: Minimize the accesibility of classes and members.
+			Make each class or members as inacessible as possible.
+			If the Accesibility is public, then it will be an API, which outer classes can use it. That's the reason to make it private/package.
+			Instance Fields should never be public.(Even Final reference which contains the Mutable Object, {The Mutable Object is itself Modifiable}) 
+			
+Item 14: In Public classes , use accesor methods, not public fields.
+			If a class is accesible from outside the package , provide accesor methods.
+			In Essence, Public classes should never expose the mutable fields.
+			
+Item 15 : Minimize Mutability.
+		 Immutabilty class is a class whose instance cannot be modified, once value/Information is created it is fixed for the entire lifetime.
+		 Eg: String , Boxed Primitive classes(Wrapper class)
+		 Constraints on a Class:
+		 1. Dont provide any methods, to modify the object.
+		 2.Ensure the class cant be Subclassed.
+		 3.Make all Fields Final.
+		 4.Make all Fields Private.
+		 5.Ensure exclusive access to any Mutable Components.
+		 
+		 Functional Approach in the class , will return a new Modified Object instead of returning the same Object with Just State Modified.
+		 Immutable class are inherently Thread Safe:They require no synchronization.
+		 An Immutable Class Can provide a static Factory , which can cache the frequently requested Objects.(Wrapper Classes will do this).
+		 
+		 Not Only u can share Immutable Objects, u can share their internals as well.
+		 Immutable Objects make great Building blocks for other Objects.
+		 
+		 Disadvantage: For Every value change u should create a new Object.
+		 
+		 Concern : Attackers will make use of the mutable reference in the immutable class during the serialization.
+	
+Item 16: Favour Composition over Inheritence.
+		  Instead of extending, give a private field that references the existing class.
+		  Each instance method, will invoke the corresponding method of the contained instance of the existing class. This is known as Forwarding.
+		  
+		  Class Containing the Composite Object, is called as Wrapper class , because each instance Wraps around itself another instance.
+		  This is also an example of Decorator Pattern.
+		  
+		  Technically this is not delegation, as it not passing itself to the other object methods.
+			
+Look into Exported API. (May be in Item 74,75).

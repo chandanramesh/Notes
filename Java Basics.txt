@@ -1,0 +1,10 @@
+Exceptions:
+	Imp: Be carefull with the finally block.
+		 The Exceptions thrown inside the finally block , will hide the actual exception and the exception in the finally block will be propogated to the caller
+		 methods.
+		 
+		 From JLS
+		 If the catch block completes abruptly for reason R, then the finally block is executed. Then there is a choice:
+
+		If the finally block completes normally, then the try statement completes abruptly for reason R.
+		If the finally block completes abruptly for reason S, then the try statement completes abruptly for reason S (and reason R is discarded).
